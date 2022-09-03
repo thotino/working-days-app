@@ -11,7 +11,11 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('Company', [{ name: 'Umbrella' }])
+   await queryInterface.bulkInsert('Companies', [{ 
+    name: 'Umbrella', 
+    createdAt: new Date().toDateString(),
+   updatedAt: new Date().toDateString() 
+  }])
   },
 
   async down (queryInterface, Sequelize) {

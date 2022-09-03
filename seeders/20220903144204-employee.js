@@ -11,27 +11,32 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('WorkingDays', [{
-    week_day: 'Monday',
-    working_date: new Date(),
-    is_working: true,
-    createdAt: new Date().toDateString(),
-      updatedAt: new Date().toDateString()
+   await queryInterface.bulkInsert('Employees', [
+    {
+      email: 'john-doe@domain.com', 
+      first_name: 'John',  
+      last_name: 'DOE', 
+      CompanyId: 1,
+      createdAt: new Date().toDateString(),
+      updatedAt: new Date().toDateString(),
   },
   {
-    week_day: 'Tuesday',
-    working_date: new Date(),
-    is_working: true,
+    email: 'log_w@domain.com', 
+    first_name: 'Logan',  
+    last_name: 'WOLVERINE', 
     createdAt: new Date().toDateString(),
-      updatedAt: new Date().toDateString()
-  },
+    updatedAt: new Date().toDateString(),
+    CompanyId: 1
+},
   {
-    week_day: 'Wednesday',
-    working_date: new Date(),
-    is_working: false,
+    email: 'john-connor@domain.com', 
+    first_name: 'John',  
+    last_name: 'CONNOR', 
     createdAt: new Date().toDateString(),
-      updatedAt: new Date().toDateString()
-  }])
+    updatedAt: new Date().toDateString(),
+    CompanyId: 1
+}
+   ])
   },
 
   async down (queryInterface, Sequelize) {
