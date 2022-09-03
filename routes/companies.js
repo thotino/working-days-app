@@ -6,7 +6,7 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-  const companies = await db.Company.findAll()
+  const companies = await db.Company.findAll({ include: 'employees' })
   return res.json(companies);
 });
 
